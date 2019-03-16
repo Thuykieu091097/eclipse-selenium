@@ -11,7 +11,6 @@ public class RegisterFailDefault {
 	String Url = "http://mobilestore01.herokuapp.com/register";
 	@Test
 	public void testRegisterwithInputFailName() {
-		
 		// open firefox browser
 		
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Thuy Kieu\\Desktop\\geckodriver-v0.24.0-win64\\geckodriver.exe");

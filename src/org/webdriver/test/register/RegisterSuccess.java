@@ -52,7 +52,7 @@ public class RegisterSuccess {
 		SubmitBtn.click();
 		
 		// refresh browser=> back home
-		driver.get("http://mobilestore01.herokuapp.com/register");
+		driver.get("http://mobilestore01.herokuapp.com/home");
 		
 		//close browser
 		driver.close();

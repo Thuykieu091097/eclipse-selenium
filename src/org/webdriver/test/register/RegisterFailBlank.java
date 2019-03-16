@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 public class RegisterFailBlank {
 	String Url = "http://mobilestore01.herokuapp.com/register";
-	
 	@Test
 	public void testRegisterwithBlankField() {
 		
