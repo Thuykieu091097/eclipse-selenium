@@ -1,24 +1,36 @@
 package org.webdriver.test.register;
 
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class RegisterFailDefault {
-	String Url = "http://mobilestore01.herokuapp.com/register";
+public class RegisterFailDefault extends PageObject {
+	private WebDriver driver;
+
+	@Before
+		public void open() {
+		// open firefox browser
+
+		System.setProperty("webdriver.gecko.driver",
+				"C:\\\\Users\\\\kieu.tranthithuy\\\\Downloads\\\\geckodriver-v0.23.0-win64\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		// Access web application
+		driver.get(Url);
+	}
+
+	@After
+		public void close() {
+		// close browser
+		driver.close();
+	}
+	
 	@Test
 	public void testRegisterwithInputFailName() {
-		// open firefox browser
-		
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Thuy Kieu\\Desktop\\geckodriver-v0.24.0-win64\\geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
-		
-		// access the application: accounts.google.com
-		
-		driver.get(Url);		
 		
 		// input name
 		By NameBy = By.xpath("//*[@id=\"name\"]");
@@ -60,22 +72,11 @@ public class RegisterFailDefault {
 						
 		Assert.assertEquals("The name must be at least 3 characters.", NamecontentMsg);
 		
-	
-		//close browser
-		driver.close();
 	}
+	
 	@Test
 	public void testRegisterwithInputFailPas() {
-		
-		// open firefox browser
-		
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Thuy Kieu\\Desktop\\geckodriver-v0.24.0-win64\\geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
-		
-		// access the application: accounts.google.com
-		
-		driver.get(Url);		
-		
+	
 		// input name
 		By NameBy = By.xpath("//*[@id=\"name\"]");
 		WebElement nameField = driver.findElement(NameBy);
@@ -124,23 +125,12 @@ public class RegisterFailDefault {
 		// Verify
 								
 		Assert.assertEquals("The password confirm must be at least 3 characters.", CfPascontentMsg);
-		
-		
-		//close browser
-		driver.close();
+
 	}
+	
 	@Test
 	public void testRegisterwithInputFailAddress() {
-		
-		// open firefox browser
-		
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Thuy Kieu\\Desktop\\geckodriver-v0.24.0-win64\\geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
-		
-		// access the application: accounts.google.com
-		
-		driver.get(Url);		
-		
+
 		// input name
 		By NameBy = By.xpath("//*[@id=\"name\"]");
 		WebElement nameField = driver.findElement(NameBy);
@@ -180,22 +170,12 @@ public class RegisterFailDefault {
 		// Verify
 						
 		Assert.assertEquals("The address must be at least 4 characters.", AddresscontentMsg);
-		
-		//close browser
-		driver.close();
+
 	}
+	
 	@Test
 	public void testRegisterwithInputFailPhone() {
-		
-		// open firefox browser
-		
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Thuy Kieu\\Desktop\\geckodriver-v0.24.0-win64\\geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
-		
-		// access the application: accounts.google.com
-		
-		driver.get(Url);		
-		
+
 		// input name
 		By NameBy = By.xpath("//*[@id=\"name\"]");
 		WebElement nameField = driver.findElement(NameBy);
@@ -235,22 +215,12 @@ public class RegisterFailDefault {
 		// Verify
 						
 		Assert.assertEquals("The phone must be at least 10 characters.", PhonecontentMsg);
-		
-		//close browser
-		driver.close();
+
 	}
+	
 	@Test
 	public void testRegisterwithInputFailPasDifferentCfPas() {
-		
-		// open firefox browser
-		
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Thuy Kieu\\Desktop\\geckodriver-v0.24.0-win64\\geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
-		
-		// access the application: accounts.google.com
-		
-		driver.get(Url);		
-		
+
 		// input name
 		By NameBy = By.xpath("//*[@id=\"name\"]");
 		WebElement nameField = driver.findElement(NameBy);
@@ -290,8 +260,7 @@ public class RegisterFailDefault {
 		// Verify
 						
 		Assert.assertEquals("The password confirm and password must match.", CfPascontentMsg);
-		
-		//close browser
-		driver.close();
-	}
+
+}
+	
 }

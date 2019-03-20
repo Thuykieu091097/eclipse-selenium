@@ -1,24 +1,35 @@
 package org.webdriver.test.register;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class RegisterSuccess {
-	String Url = "http://mobilestore01.herokuapp.com/register";
+public class RegisterSuccess extends PageObject {
+	private WebDriver driver;
+
+	@Before
+		public void open() {
+		// open firefox browser
+
+		System.setProperty("webdriver.gecko.driver",
+				"C:\\\\Users\\\\kieu.tranthithuy\\\\Downloads\\\\geckodriver-v0.23.0-win64\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		// Access web application
+		driver.get(Url);
+	}
+
+	@After
+		public void close() {
+		// close browser
+		driver.close();
+	}
+	
 	@Test
 	public void testRegisterwithInputFull() {
-		
-		// open firefox browser
-		
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Thuy Kieu\\Desktop\\geckodriver-v0.24.0-win64\\geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
-		
-		// access the application: accounts.google.com
-		
-		driver.get(Url);		
 		
 		// input name
 		By NameBy = By.xpath("//*[@id=\"name\"]");
@@ -53,9 +64,8 @@ public class RegisterSuccess {
 		
 		// refresh browser=> back home
 		driver.get("http://mobilestore01.herokuapp.com/home");
-		
-		//close browser
-		driver.close();
-	}
+
+
+}
 
 }
