@@ -1,13 +1,10 @@
 package org.webdriver.test.register;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.webdriver.test.message.MessageError;
 import org.webdriver.test.message.MessageInput;
 import org.webdriver.test.pageobject.PageObject;
@@ -15,25 +12,20 @@ import org.webdriver.test.pageobject.PageObject;
 
 
 public class RegisterFailBlank extends PageObject {
-	protected WebDriver driver;
-
+	/*Cách 1- @Before
+	public void navigate() {
+		driver.navigate().to(registerURL);
+	}*/
+	//Cách 2
 	@Before
-		public void open() {
-		// open firefox browser
-
-		System.setProperty("webdriver.gecko.driver",
-				"C:\\Users\\kieu.tranthithuy\\Downloads\\geckodriver-v0.23.0-win64\\geckodriver.exe");
-		driver = new FirefoxDriver();
-		// Access web application
-		driver.get(registerURL);
-	}
-
-	@After
-		public void close() {
-		// close browser
-		driver.close();
-	}
-
+	public void click() {
+	By memberbtnBy = By.xpath("//a[contains(text(),'Member')]");
+	WebElement memberBtn = driver.findElement(memberbtnBy);
+	memberBtn.click();
+	By registerbtnBy = By.xpath("//a[contains(text(),'Register')]");
+	WebElement registerBtn = driver.findElement(registerbtnBy);
+	registerBtn.click();
+		}
 	@Test
 		public void testRegisterwithBlankField() {
 
@@ -47,37 +39,37 @@ public class RegisterFailBlank extends PageObject {
 		WebElement errMsgName = driver.findElement(byNameErrMsgRequir);
 		String NamecontentMsg = errMsgName.getText();
 		// Verify
-		Assert.assertEquals(MessageError.errMsgName, NamecontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_NAME, NamecontentMsg);
 		// Get error message
 		By EmailErrMsgRequir = By.xpath("//div/div[2]");
 		WebElement errMsgEmail = driver.findElement(EmailErrMsgRequir);
 		String EmailcontentMsg = errMsgEmail.getText();
 		// Verify
-		Assert.assertEquals(MessageError.errMsgEmail, EmailcontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_EMAIL, EmailcontentMsg);
 		// Get error message
 		By byPasErrMsgRequir = By.xpath("//div/div[3]");
 		WebElement errMsgPassword = driver.findElement(byPasErrMsgRequir);
 		String PascontentMsg = errMsgPassword.getText();
 		// Verify
-		Assert.assertEquals(MessageError.errMsgPassword, PascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASSWORD, PascontentMsg);
 		// Get error message
 		By byCfPasErrMsgRequir = By.xpath("//div[4]");
 		WebElement errMsgCfPass = driver.findElement(byCfPasErrMsgRequir);
 		String CfPascontentMsg = errMsgCfPass.getText();
 		// Verify
-		Assert.assertEquals(MessageError.errMsgCfPass, CfPascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_CONFIRMPASS, CfPascontentMsg);
 		// Get error message
 		By byPhoneErrMsgRequir = By.xpath("//div[5]");
 		WebElement errMsgPhone = driver.findElement(byPhoneErrMsgRequir);
 		String PhonecontentMsg = errMsgPhone.getText();
 		// Verify
-		Assert.assertEquals(MessageError.errMsgPhone, PhonecontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PHONE, PhonecontentMsg);
 		// Get error message
 		By byAddressErrMsgRequir = By.xpath("//div[6]");
 		WebElement errMsgAddress = driver.findElement(byAddressErrMsgRequir);
 		String AddresscontentMsg = errMsgAddress.getText();
 		// Verify
-		Assert.assertEquals(MessageError.errMsgAddress, AddresscontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_ADDRESS, AddresscontentMsg);
 
 	}
 
@@ -87,23 +79,23 @@ public class RegisterFailBlank extends PageObject {
 		// input email
 		By EmailBy = By.xpath("//input[@id='email']");
 		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.email);
+		emailField.sendKeys(MessageInput.EMAIL);
 		// input password
 		By PassBy = By.xpath("//input[@id='password']");
 		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.password);
+		passField.sendKeys(MessageInput.PASSWORD);
 		//input confirm password
 		By CfPassBy = By.xpath("//input[@id='password_confirm']");
 		WebElement cfpassField = driver.findElement(CfPassBy);
-		cfpassField.sendKeys(MessageInput.confirmpass);
+		cfpassField.sendKeys(MessageInput.CONFIRMPASS);
 		//input address
 		By AddBy = By.xpath("//input[@id='address']");
 		WebElement addField = driver.findElement(AddBy);
-		addField.sendKeys(MessageInput.address);
+		addField.sendKeys(MessageInput.ADDRESS);
 		//input phone number
 		By PhoneBy = By.xpath("//input[@id='phone']");
 		WebElement phoneField = driver.findElement(PhoneBy);
-		phoneField.sendKeys(MessageInput.phone);
+		phoneField.sendKeys(MessageInput.PHONE);
 		
 		// click button register	
 		
@@ -119,7 +111,7 @@ public class RegisterFailBlank extends PageObject {
 		
 		// Verify
 		
-		Assert.assertEquals(MessageError.errMsgName, NamecontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_NAME, NamecontentMsg);
 		
 		
 	} 
@@ -130,23 +122,23 @@ public class RegisterFailBlank extends PageObject {
 		// input name
 		By NameBy = By.xpath("//*[@id=\"name\"]");
 		WebElement nameField = driver.findElement(NameBy);
-		nameField.sendKeys(MessageInput.name);
+		nameField.sendKeys(MessageInput.NAME);
 		// input password
 		By PassBy = By.xpath("//input[@id='password']");
 		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.password);
+		passField.sendKeys(MessageInput.PASSWORD);
 		//input confirm password
 		By CfPassBy = By.xpath("//input[@id='password_confirm']");
 		WebElement cfpassField = driver.findElement(CfPassBy);
-		cfpassField.sendKeys(MessageInput.confirmpass);
+		cfpassField.sendKeys(MessageInput.CONFIRMPASS);
 		//input address
 		By AddBy = By.xpath("//input[@id='address']");
 		WebElement addField = driver.findElement(AddBy);
-		addField.sendKeys(MessageInput.address);
+		addField.sendKeys(MessageInput.ADDRESS);
 		//input phone number
 		By PhoneBy = By.xpath("//input[@id='phone']");
 		WebElement phoneField = driver.findElement(PhoneBy);
-		phoneField.sendKeys(MessageInput.phone);
+		phoneField.sendKeys(MessageInput.PHONE);
 		
 		// click button register	
 		
@@ -162,7 +154,7 @@ public class RegisterFailBlank extends PageObject {
 		
 		// Verify
 		
-		Assert.assertEquals(MessageError.errMsgEmail, EmailcontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_EMAIL, EmailcontentMsg);
 	} 
 	
 	@Test
@@ -170,24 +162,24 @@ public class RegisterFailBlank extends PageObject {
 		// input name
 		By NameBy = By.xpath("//*[@id=\"name\"]");
 		WebElement nameField = driver.findElement(NameBy);
-		nameField.sendKeys(MessageInput.name);
+		nameField.sendKeys(MessageInput.NAME);
 		
 		// input email
 		By EmailBy = By.xpath("//input[@id='email']");
 		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.email);
+		emailField.sendKeys(MessageInput.EMAIL);
 		//input confirm password
 		By CfPassBy = By.xpath("//input[@id='password_confirm']");
 		WebElement cfpassField = driver.findElement(CfPassBy);
-		cfpassField.sendKeys(MessageInput.confirmpass);
+		cfpassField.sendKeys(MessageInput.CONFIRMPASS);
 		//input address
 		By AddBy = By.xpath("//input[@id='address']");
 		WebElement addField = driver.findElement(AddBy);
-		addField.sendKeys(MessageInput.address);
+		addField.sendKeys(MessageInput.ADDRESS);
 		//input phone number
 		By PhoneBy = By.xpath("//input[@id='phone']");
 		WebElement phoneField = driver.findElement(PhoneBy);
-		phoneField.sendKeys(MessageInput.phone);
+		phoneField.sendKeys(MessageInput.PHONE);
 				
 		// click button register	
 				
@@ -203,7 +195,7 @@ public class RegisterFailBlank extends PageObject {
 				
 		// Verify
 				
-		Assert.assertEquals(MessageError.errMsgPassword, PascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASSWORD, PascontentMsg);
 		
 		// Get error message
 		
@@ -213,7 +205,7 @@ public class RegisterFailBlank extends PageObject {
 						
 		// Verify
 						
-		Assert.assertEquals(MessageError.errMsgPasandCfpas, CfPascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_CONFIRMPASS, CfPascontentMsg);
 			}
 	
 	@Test
@@ -222,23 +214,23 @@ public class RegisterFailBlank extends PageObject {
 		// input name
 		By NameBy = By.xpath("//*[@id=\"name\"]");
 		WebElement nameField = driver.findElement(NameBy);
-		nameField.sendKeys(MessageInput.name);
+		nameField.sendKeys(MessageInput.NAME);
 		// input email
 		By EmailBy = By.xpath("//input[@id='email']");
 		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.email);	
+		emailField.sendKeys(MessageInput.EMAIL);	
 		// input password
 		By PassBy = By.xpath("//input[@id='password']");
 		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.password);
+		passField.sendKeys(MessageInput.PASSWORD);
 		//input address
 		By AddBy = By.xpath("//input[@id='address']");
 		WebElement addField = driver.findElement(AddBy);
-		addField.sendKeys(MessageInput.address);
+		addField.sendKeys(MessageInput.ADDRESS);
 		//input phone number
 		By PhoneBy = By.xpath("//input[@id='phone']");
 		WebElement phoneField = driver.findElement(PhoneBy);
-		phoneField.sendKeys(MessageInput.phone);
+		phoneField.sendKeys(MessageInput.PHONE);
 		
 		// click button register	
 		
@@ -254,7 +246,7 @@ public class RegisterFailBlank extends PageObject {
 		
 		// Verify
 		
-		Assert.assertEquals(MessageError.errMsgCfPass, CfPascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_CONFIRMPASS, CfPascontentMsg);
 		
 	}
 	
@@ -264,23 +256,23 @@ public class RegisterFailBlank extends PageObject {
 		// input name
 		By NameBy = By.xpath("//*[@id=\"name\"]");
 		WebElement nameField = driver.findElement(NameBy);
-		nameField.sendKeys(MessageInput.email);
+		nameField.sendKeys(MessageInput.NAME);
 		// input email
 		By EmailBy = By.xpath("//input[@id='email']");
 		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.email);	
+		emailField.sendKeys(MessageInput.EMAIL);	
 		// input password
 		By PassBy = By.xpath("//input[@id='password']");
 		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.password);
+		passField.sendKeys(MessageInput.PASSWORD);
 		//input confirm password
 		By CfPassBy = By.xpath("//input[@id='password_confirm']");
 		WebElement cfpassField = driver.findElement(CfPassBy);
-		cfpassField.sendKeys(MessageInput.confirmpass);
+		cfpassField.sendKeys(MessageInput.CONFIRMPASS);
 		//input phone number
 		By PhoneBy = By.xpath("//input[@id='phone']");
 		WebElement phoneField = driver.findElement(PhoneBy);
-		phoneField.sendKeys(MessageInput.phone);
+		phoneField.sendKeys(MessageInput.PHONE);
 		
 		// click button register	
 		
@@ -296,7 +288,7 @@ public class RegisterFailBlank extends PageObject {
 		
 		// Verify
 		
-		Assert.assertEquals(MessageError.errMsgAddress, AddresscontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_ADDRESS, AddresscontentMsg);
 		
 	}
 	@Test
@@ -306,23 +298,23 @@ public class RegisterFailBlank extends PageObject {
 		// input name
 		By NameBy = By.xpath("//*[@id=\"name\"]");
 		WebElement nameField = driver.findElement(NameBy);
-		nameField.sendKeys(MessageInput.name);
+		nameField.sendKeys(MessageInput.NAME);
 		// input email
 		By EmailBy = By.xpath("//input[@id='email']");
 		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.email);	
+		emailField.sendKeys(MessageInput.EMAIL);	
 		// input password
 		By PassBy = By.xpath("//input[@id='password']");
 		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.password);
+		passField.sendKeys(MessageInput.PASSWORD);
 		//input confirm password
 		By CfPassBy = By.xpath("//input[@id='password_confirm']");
 		WebElement cfpassField = driver.findElement(CfPassBy);
-		cfpassField.sendKeys(MessageInput.confirmpass);
+		cfpassField.sendKeys(MessageInput.CONFIRMPASS);
 		//input address
 		By AddBy = By.xpath("//input[@id='address']");
 		WebElement addField = driver.findElement(AddBy);
-		addField.sendKeys(MessageInput.address);
+		addField.sendKeys(MessageInput.ADDRESS);
 		
 		
 		// click button register	
@@ -339,6 +331,6 @@ public class RegisterFailBlank extends PageObject {
 		
 		// Verify
 		
-		Assert.assertEquals(MessageError.errMsgPhone, PhonecontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PHONE, PhonecontentMsg);
 	}
 }

@@ -1,32 +1,27 @@
 package org.webdriver.test.login;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.webdriver.test.message.MessageInput;
 import org.webdriver.test.pageobject.PageObject;
 
 public class LoginFail extends PageObject {
-	protected  WebDriver driver;
-
+	/* Cách 1-@Before
+	public void navigate() {
+		driver.navigate().to(loginURL);
+	}*/
+	//Cách 2
 	@Before
-		public void open() {
-	// open firefox browser
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\kieu.tranthithuy\\Downloads\\geckodriver-v0.23.0-win64\\geckodriver.exe");
-		driver = new FirefoxDriver();
-	//Access application web: "http://mobilestore01.herokuapp.com/login"
-		driver.get(loginURL);
+	public void click() {
+		By memberbtnBy = By.xpath("//a[contains(text(),'Member')]");
+		WebElement memberBtn = driver.findElement(memberbtnBy);
+		memberBtn.click();
+		By loginbtnBy = By.xpath("//a[contains(text(),'Login')]");
+		WebElement loginBtn = driver.findElement(loginbtnBy);
+		loginBtn.click();
 	}
-
-	@After
-		public void close() {
-		driver.close();
-	}
-
 	@Test
 		public void testLoginwithBlank() {
 		// click button login
@@ -41,7 +36,7 @@ public class LoginFail extends PageObject {
 		// input Password
 		By PassBy = By.id("password");
 		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.passloginSuccess);
+		passField.sendKeys(MessageInput.PASSLOGIN);
 		// click button login
 		By LoginBy = By.xpath("//input[@value='Login']");
 		WebElement loginBtn = driver.findElement(LoginBy);
@@ -55,7 +50,7 @@ public class LoginFail extends PageObject {
 		// input email
 		By EmailBy = By.id("email");
 		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.emailloginSuccess);
+		emailField.sendKeys(MessageInput.EMAILLOGIN);
 		// click button login
 		By LoginBy = By.xpath("//input[@value='Login']");
 		WebElement loginBtn = driver.findElement(LoginBy);
