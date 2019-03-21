@@ -7,9 +7,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.webdriver.test.message.MessageInput;
+import org.webdriver.test.pageobject.PageObject;
 
 public class LoginFail extends PageObject {
-	private  WebDriver driver;
+	protected  WebDriver driver;
 
 	@Before
 		public void open() {
@@ -17,7 +19,7 @@ public class LoginFail extends PageObject {
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\kieu.tranthithuy\\Downloads\\geckodriver-v0.23.0-win64\\geckodriver.exe");
 		driver = new FirefoxDriver();
 	//Access application web: "http://mobilestore01.herokuapp.com/login"
-		driver.get(Url);
+		driver.get(loginURL);
 	}
 
 	@After
@@ -39,7 +41,7 @@ public class LoginFail extends PageObject {
 		// input Password
 		By PassBy = By.id("password");
 		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys("thuykieu0910");
+		passField.sendKeys(MessageInput.passloginSuccess);
 		// click button login
 		By LoginBy = By.xpath("//input[@value='Login']");
 		WebElement loginBtn = driver.findElement(LoginBy);
@@ -53,7 +55,7 @@ public class LoginFail extends PageObject {
 		// input email
 		By EmailBy = By.id("email");
 		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys("kieu.tranthithuy@vti.com.vn");
+		emailField.sendKeys(MessageInput.emailloginSuccess);
 		// click button login
 		By LoginBy = By.xpath("//input[@value='Login']");
 		WebElement loginBtn = driver.findElement(LoginBy);
@@ -67,7 +69,7 @@ public class LoginFail extends PageObject {
 		WebElement backBtn = driver.findElement(BackBy);
 		backBtn.click();
 		// Back home
-		driver.get("http://mobilestore01.herokuapp.com/home");
+		driver.get(homeURL);
 	}
 
 	@Test
@@ -77,7 +79,7 @@ public class LoginFail extends PageObject {
 		WebElement backregisterBtn = driver.findElement(BackRegisterBy);
 		backregisterBtn.click();
 		// Back register
-		driver.get("http://mobilestore01.herokuapp.com/register");
+		driver.get(registerURL);
 	}
 
 	@Test
@@ -87,9 +89,8 @@ public class LoginFail extends PageObject {
 		WebElement loginGoogleLink = driver.findElement(LoginGoogleBy);
 		loginGoogleLink.click();
 		// Access account google browser
-		driver.get(
-				"https://accounts.google.com/signin/oauth/identifier?client_id=334662783555-4aj9028kjunhk3kqtsmitp567l4ohkoo.apps.googleusercontent.com&as=eDrn7wwQjHvbb1bWmAa0Ng&destination=http%3A%2F%2Fmobilestore01.herokuapp.com&approval_state=!ChR5X0dVZnJRYlE1RTVwbXJXeTJZbBIfdzhuQ1UxcGgwdGtXNEJxcmlYbTVkb2tpWXdBZW1CWQ%E2%88%99AJDr988AAAAAXI0P-FjAjooSMJiH96Q7Oj5hxnONUVpD&oauthgdpr=1&xsrfsig=ChkAeAh8Tyn6eDjYEOiyDUVD5lBwcuY4qlyXEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow");
-	}
+		driver.get(loginbyGG);
+	}		
 
 	@Test
 		public void ForgotPass() {
@@ -99,7 +100,7 @@ public class LoginFail extends PageObject {
 		WebElement forgotPassLink = driver.findElement(ForgotPassBy);
 		forgotPassLink.click();
 		// access...
-		driver.get("http://mobilestore01.herokuapp.com/password/reset");
+		driver.get(resetURL);
 
 	}
 }
