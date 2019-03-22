@@ -14,3 +14,4 @@ public class MessageError {
 	public static String ERROR_MESSAGE_ADDRESS_CHARACTER = "The address must be at least 4 characters.";
 	public static String ERROR_MESSAGE_PHONE_CHARACTER = "The phone must be at least 10 characters.";
 }
+

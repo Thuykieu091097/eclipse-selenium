@@ -4,15 +4,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.webdriver.test.message.MessageInput;
 import org.webdriver.test.pageobject.PageObject;
 
 public class LoginFail extends PageObject {
-	/* Cách 1-@Before
-	public void navigate() {
-		driver.navigate().to(loginURL);
-	}*/
-	//Cách 2
+	/*
+	 * Cách 1-@Before public void navigate() { driver.navigate().to(loginURL); }
+	 */
+	// Cách 2
 	@Before
 	public void click() {
 		By memberbtnBy = By.xpath("//a[contains(text(),'Member')]");
@@ -22,43 +20,34 @@ public class LoginFail extends PageObject {
 		WebElement loginBtn = driver.findElement(loginbtnBy);
 		loginBtn.click();
 	}
+
 	@Test
-		public void testLoginwithBlank() {
+	public void testLoginwithBlank() {
 		// click button login
-		By LoginBy = By.xpath("//input[@value='Login']");
-		WebElement loginBtn = driver.findElement(LoginBy);
-		loginBtn.click();
+		ClickBtnLogin();
 
 	}
 
 	@Test
-		public void testLoginwithBlankEmail() {
+	public void testLoginwithBlankEmail() {
 		// input Password
-		By PassBy = By.id("password");
-		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.PASSLOGIN);
+		EnterPasswordValueLogin();
 		// click button login
-		By LoginBy = By.xpath("//input[@value='Login']");
-		WebElement loginBtn = driver.findElement(LoginBy);
-		loginBtn.click();
+		ClickBtnLogin();
 
 	}
 
 	@Test
-		public void testLoginwithBlankPass() {
+	public void testLoginwithBlankPass() {
 
 		// input email
-		By EmailBy = By.id("email");
-		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.EMAILLOGIN);
+		EnterEmailValueLogin();
 		// click button login
-		By LoginBy = By.xpath("//input[@value='Login']");
-		WebElement loginBtn = driver.findElement(LoginBy);
-		loginBtn.click();
+		ClickBtnLogin();
 	}
 
 	@Test
-		public void BackHome() {
+	public void BackHome() {
 		// click button back
 		By BackBy = By.xpath("//a[contains(text(),'Back')]");
 		WebElement backBtn = driver.findElement(BackBy);
@@ -68,7 +57,7 @@ public class LoginFail extends PageObject {
 	}
 
 	@Test
-		public void BackRegister() {
+	public void BackRegister() {
 		// click button back
 		By BackRegisterBy = By.xpath("//a[contains(text(),'Register')]");
 		WebElement backregisterBtn = driver.findElement(BackRegisterBy);
@@ -78,17 +67,17 @@ public class LoginFail extends PageObject {
 	}
 
 	@Test
-		public void LoginbyGoogle() {
+	public void LoginbyGoogle() {
 		// click link login by google
 		By LoginGoogleBy = By.xpath("//div[@id='login-form']/div/div/div/div[2]/form/div[3]/div/div/a");
 		WebElement loginGoogleLink = driver.findElement(LoginGoogleBy);
 		loginGoogleLink.click();
 		// Access account google browser
 		driver.get(loginbyGG);
-	}		
+	}
 
 	@Test
-		public void ForgotPass() {
+	public void ForgotPass() {
 
 		// click link fogot
 		By ForgotPassBy = By.xpath("//a[contains(text(),'Forgot Your Password?')]");

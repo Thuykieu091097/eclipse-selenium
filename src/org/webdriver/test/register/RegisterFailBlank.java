@@ -6,34 +6,29 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.webdriver.test.message.MessageError;
-import org.webdriver.test.message.MessageInput;
 import org.webdriver.test.pageobject.PageObject;
 
-
-
 public class RegisterFailBlank extends PageObject {
-	/*Cách 1- @Before
-	public void navigate() {
-		driver.navigate().to(registerURL);
-	}*/
-	//Cách 2
+	/*
+	 * Cách 1- @Before public void navigate() { driver.navigate().to(registerURL); }
+	 */
+	// Cách 2
 	@Before
 	public void click() {
-	By memberbtnBy = By.xpath("//a[contains(text(),'Member')]");
-	WebElement memberBtn = driver.findElement(memberbtnBy);
-	memberBtn.click();
-	By registerbtnBy = By.xpath("//a[contains(text(),'Register')]");
-	WebElement registerBtn = driver.findElement(registerbtnBy);
-	registerBtn.click();
-		}
+		By memberbtnBy = By.xpath("//a[contains(text(),'Member')]");
+		WebElement memberBtn = driver.findElement(memberbtnBy);
+		memberBtn.click();
+		By registerbtnBy = By.xpath("//a[contains(text(),'Register')]");
+		WebElement registerBtn = driver.findElement(registerbtnBy);
+		registerBtn.click();
+	}
+
 	@Test
-		public void testRegisterwithBlankField() {
+	public void testRegisterwithBlankField() {
 
 		// click button register
-		By SubmitBy = By.xpath("//input[@value='Register']");
-		WebElement SubmitBtn = driver.findElement(SubmitBy);
-		SubmitBtn.click();
-		
+		ClickBtnRegister();
+
 		// Get error message
 		By byNameErrMsgRequir = By.xpath("//div/div/div/div");
 		WebElement errMsgName = driver.findElement(byNameErrMsgRequir);
@@ -74,263 +69,193 @@ public class RegisterFailBlank extends PageObject {
 	}
 
 	@Test
-		public void testRegisterwithBlankName() {
-		
+	public void testRegisterwithBlankName() {
+
 		// input email
-		By EmailBy = By.xpath("//input[@id='email']");
-		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.EMAIL);
+		EnterEmailValue();
+
 		// input password
-		By PassBy = By.xpath("//input[@id='password']");
-		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.PASSWORD);
-		//input confirm password
-		By CfPassBy = By.xpath("//input[@id='password_confirm']");
-		WebElement cfpassField = driver.findElement(CfPassBy);
-		cfpassField.sendKeys(MessageInput.CONFIRMPASS);
-		//input address
-		By AddBy = By.xpath("//input[@id='address']");
-		WebElement addField = driver.findElement(AddBy);
-		addField.sendKeys(MessageInput.ADDRESS);
-		//input phone number
-		By PhoneBy = By.xpath("//input[@id='phone']");
-		WebElement phoneField = driver.findElement(PhoneBy);
-		phoneField.sendKeys(MessageInput.PHONE);
-		
-		// click button register	
-		
-		By SubmitBy = By.xpath("//input[@value='Register']");
-		WebElement SubmitBtn = driver.findElement(SubmitBy);
-		SubmitBtn.click();
-		
+		EnterPasswordValue();
+		// input confirm password
+		EnterCfPasswordValue();
+		// input address
+		EnterAddressValue();
+		// input phone number
+		EnterPhoneValue();
+
+		// click button register
+
+		ClickBtnRegister();
+
 		// Get error message
-		
+
 		By byNameErrMsgRequir = By.xpath("//div/div/div/div");
 		WebElement NameErrMsg = driver.findElement(byNameErrMsgRequir);
 		String NamecontentMsg = NameErrMsg.getText();
-		
+
 		// Verify
-		
+
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_NAME, NamecontentMsg);
-		
-		
-	} 
-	
+
+	}
+
 	@Test
-		public void testRegisterwithBlankEmail() {
-		
+	public void testRegisterwithBlankEmail() {
+
 		// input name
-		By NameBy = By.xpath("//*[@id=\"name\"]");
-		WebElement nameField = driver.findElement(NameBy);
-		nameField.sendKeys(MessageInput.NAME);
+		EnterNameValue();
 		// input password
-		By PassBy = By.xpath("//input[@id='password']");
-		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.PASSWORD);
-		//input confirm password
-		By CfPassBy = By.xpath("//input[@id='password_confirm']");
-		WebElement cfpassField = driver.findElement(CfPassBy);
-		cfpassField.sendKeys(MessageInput.CONFIRMPASS);
-		//input address
-		By AddBy = By.xpath("//input[@id='address']");
-		WebElement addField = driver.findElement(AddBy);
-		addField.sendKeys(MessageInput.ADDRESS);
-		//input phone number
-		By PhoneBy = By.xpath("//input[@id='phone']");
-		WebElement phoneField = driver.findElement(PhoneBy);
-		phoneField.sendKeys(MessageInput.PHONE);
-		
-		// click button register	
-		
-		By SubmitBy = By.xpath("//input[@value='Register']");
-		WebElement SubmitBtn = driver.findElement(SubmitBy);
-		SubmitBtn.click();
-		
+		EnterPasswordValue();
+		// input confirm password
+		EnterCfPasswordValue();
+		// input address
+		EnterAddressValue();
+		// input phone number
+		EnterPhoneValue();
+
+		// click button register
+
+		ClickBtnRegister();
+
 		// Get error message
-		
+
 		By byEmailErrMsgRequir = By.xpath("//div/div/div/div");
 		WebElement EmailErrMsg = driver.findElement(byEmailErrMsgRequir);
 		String EmailcontentMsg = EmailErrMsg.getText();
-		
+
 		// Verify
-		
+
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_EMAIL, EmailcontentMsg);
-	} 
-	
+	}
+
 	@Test
-		public void testRegisterwithBlankPas() {
+	public void testRegisterwithBlankPas() {
 		// input name
-		By NameBy = By.xpath("//*[@id=\"name\"]");
-		WebElement nameField = driver.findElement(NameBy);
-		nameField.sendKeys(MessageInput.NAME);
-		
+		EnterNameValue();
+
 		// input email
-		By EmailBy = By.xpath("//input[@id='email']");
-		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.EMAIL);
-		//input confirm password
-		By CfPassBy = By.xpath("//input[@id='password_confirm']");
-		WebElement cfpassField = driver.findElement(CfPassBy);
-		cfpassField.sendKeys(MessageInput.CONFIRMPASS);
-		//input address
-		By AddBy = By.xpath("//input[@id='address']");
-		WebElement addField = driver.findElement(AddBy);
-		addField.sendKeys(MessageInput.ADDRESS);
-		//input phone number
-		By PhoneBy = By.xpath("//input[@id='phone']");
-		WebElement phoneField = driver.findElement(PhoneBy);
-		phoneField.sendKeys(MessageInput.PHONE);
-				
-		// click button register	
-				
-		By SubmitBy = By.xpath("//input[@value='Register']");
-		WebElement SubmitBtn = driver.findElement(SubmitBy);
-		SubmitBtn.click();
-			
+		EnterEmailValue();
+		// input confirm password
+		EnterCfPasswordValue();
+		// input address
+		EnterAddressValue();
+		// input phone number
+		EnterPhoneValue();
+
+		// click button register
+		ClickBtnRegister();
+
 		// Get error message
-			
+
 		By byPasErrMsgRequir = By.xpath("//div/div/div/div");
 		WebElement PasErrMsg = driver.findElement(byPasErrMsgRequir);
 		String PascontentMsg = PasErrMsg.getText();
-				
+
 		// Verify
-				
+
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASSWORD, PascontentMsg);
-		
+
 		// Get error message
-		
+
 		By byCfPasErrMsgRequir = By.xpath("//div[2]");
 		WebElement CfPasErrMsg = driver.findElement(byCfPasErrMsgRequir);
 		String CfPascontentMsg = CfPasErrMsg.getText();
-						
+
 		// Verify
-						
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_CONFIRMPASS, CfPascontentMsg);
-			}
-	
+
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASS_DIFFERENT_CFPASS, CfPascontentMsg);
+	}
+
 	@Test
-		public void testRegisterwithBlankCfPas() {
-		
+	public void testRegisterwithBlankCfPas() {
+
 		// input name
-		By NameBy = By.xpath("//*[@id=\"name\"]");
-		WebElement nameField = driver.findElement(NameBy);
-		nameField.sendKeys(MessageInput.NAME);
+		EnterNameValue();
 		// input email
-		By EmailBy = By.xpath("//input[@id='email']");
-		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.EMAIL);	
+		EnterEmailValue();
 		// input password
-		By PassBy = By.xpath("//input[@id='password']");
-		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.PASSWORD);
-		//input address
-		By AddBy = By.xpath("//input[@id='address']");
-		WebElement addField = driver.findElement(AddBy);
-		addField.sendKeys(MessageInput.ADDRESS);
-		//input phone number
-		By PhoneBy = By.xpath("//input[@id='phone']");
-		WebElement phoneField = driver.findElement(PhoneBy);
-		phoneField.sendKeys(MessageInput.PHONE);
-		
-		// click button register	
-		
-		By SubmitBy = By.xpath("//input[@value='Register']");
-		WebElement SubmitBtn = driver.findElement(SubmitBy);
-		SubmitBtn.click();
-		
+		EnterPasswordValue();
+		// input address
+		EnterAddressValue();
+		// input phone number
+		EnterPhoneValue();
+
+		// click button register
+
+		ClickBtnRegister();
+
 		// Get error message
-		
+
 		By byCfPasErrMsgRequir = By.xpath("//div/div/div/div");
 		WebElement CfPasErrMsg = driver.findElement(byCfPasErrMsgRequir);
 		String CfPascontentMsg = CfPasErrMsg.getText();
-		
+
 		// Verify
-		
+
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_CONFIRMPASS, CfPascontentMsg);
-		
+
 	}
-	
+
 	@Test
-		public void testRegisterwithBlankAddress() {
-		
+	public void testRegisterwithBlankAddress() {
+
 		// input name
-		By NameBy = By.xpath("//*[@id=\"name\"]");
-		WebElement nameField = driver.findElement(NameBy);
-		nameField.sendKeys(MessageInput.NAME);
+		EnterNameValue();
 		// input email
-		By EmailBy = By.xpath("//input[@id='email']");
-		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.EMAIL);	
+		EnterEmailValue();
 		// input password
-		By PassBy = By.xpath("//input[@id='password']");
-		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.PASSWORD);
-		//input confirm password
-		By CfPassBy = By.xpath("//input[@id='password_confirm']");
-		WebElement cfpassField = driver.findElement(CfPassBy);
-		cfpassField.sendKeys(MessageInput.CONFIRMPASS);
-		//input phone number
-		By PhoneBy = By.xpath("//input[@id='phone']");
-		WebElement phoneField = driver.findElement(PhoneBy);
-		phoneField.sendKeys(MessageInput.PHONE);
-		
-		// click button register	
-		
-		By SubmitBy = By.xpath("//input[@value='Register']");
-		WebElement SubmitBtn = driver.findElement(SubmitBy);
-		SubmitBtn.click();
-		
+		EnterPasswordValue();
+		// input confirm password
+		EnterCfPasswordValue();
+		// input phone number
+		EnterPhoneValue();
+
+		// click button register
+
+		ClickBtnRegister();
+
 		// Get error message
-		
+
 		By byAddressErrMsgRequir = By.xpath("//div/div/div/div");
 		WebElement AddressErrMsg = driver.findElement(byAddressErrMsgRequir);
 		String AddresscontentMsg = AddressErrMsg.getText();
-		
+
 		// Verify
-		
+
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_ADDRESS, AddresscontentMsg);
-		
+
 	}
+
 	@Test
-		public void testRegisterwithBlankPhone() {
-		
-		
+	public void testRegisterwithBlankPhone() {
+
 		// input name
-		By NameBy = By.xpath("//*[@id=\"name\"]");
-		WebElement nameField = driver.findElement(NameBy);
-		nameField.sendKeys(MessageInput.NAME);
+		EnterNameValue();
+
 		// input email
-		By EmailBy = By.xpath("//input[@id='email']");
-		WebElement emailField = driver.findElement(EmailBy);
-		emailField.sendKeys(MessageInput.EMAIL);	
+		EnterEmailValue();
+
 		// input password
-		By PassBy = By.xpath("//input[@id='password']");
-		WebElement passField = driver.findElement(PassBy);
-		passField.sendKeys(MessageInput.PASSWORD);
-		//input confirm password
-		By CfPassBy = By.xpath("//input[@id='password_confirm']");
-		WebElement cfpassField = driver.findElement(CfPassBy);
-		cfpassField.sendKeys(MessageInput.CONFIRMPASS);
-		//input address
-		By AddBy = By.xpath("//input[@id='address']");
-		WebElement addField = driver.findElement(AddBy);
-		addField.sendKeys(MessageInput.ADDRESS);
-		
-		
-		// click button register	
-		
-		By SubmitBy = By.xpath("//input[@value='Register']");
-		WebElement SubmitBtn = driver.findElement(SubmitBy);
-		SubmitBtn.click();
-		
+		EnterPasswordValue();
+
+		// input confirm password
+		EnterCfPasswordValue();
+
+		// input address
+		EnterAddressValue();
+
+		// click button register
+
+		ClickBtnRegister();
+
 		// Get error message
-		
+
 		By byPhoneErrMsgRequir = By.xpath("//div/div/div/div");
 		WebElement PhoneErrMsg = driver.findElement(byPhoneErrMsgRequir);
 		String PhonecontentMsg = PhoneErrMsg.getText();
-		
+
 		// Verify
-		
+
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_PHONE, PhonecontentMsg);
 	}
 }
