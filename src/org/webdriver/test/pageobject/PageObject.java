@@ -14,7 +14,7 @@ public class PageObject {
 	protected String homeURL = "http://mobilestore01.herokuapp.com";
 	protected String loginbyGG = "https://accounts.google.com/signin/oauth/identifier?client_id=334662783555-4aj9028kjunhk3kqtsmitp567l4ohkoo.apps.googleusercontent.com&as=eDrn7wwQjHvbb1bWmAa0Ng&destination=http%3A%2F%2Fmobilestore01.herokuapp.com&approval_state=!ChR5X0dVZnJRYlE1RTVwbXJXeTJZbBIfdzhuQ1UxcGgwdGtXNEJxcmlYbTVkb2tpWXdBZW1CWQ%E2%88%99AJDr988AAAAAXI0P-FjAjooSMJiH96Q7Oj5hxnONUVpD&oauthgdpr=1&xsrfsig=ChkAeAh8Tyn6eDjYEOiyDUVD5lBwcuY4qlyXEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow";
 	protected String resetURL = "http://mobilestore01.herokuapp.com/password/reset";
-	protected WebDriver driver;
+	protected  WebDriver driver;
 
 	@Before
 	public void open() {
@@ -145,5 +145,44 @@ public class PageObject {
 		WebElement loginBtn = driver.findElement(LoginBy);
 		loginBtn.click();
 	}
+	
+	//GET MESSAGE ERROR
+	public String getErrorMessageName(String myXpath) {
+		By byNameErrMsgRequir = By.xpath(myXpath);
+		WebElement errMsgName = driver.findElement(byNameErrMsgRequir);
+		return errMsgName.getText();
+		
+	}
+	
+	public String getErrorMessageEmail(String myXpath) {
+		By EmailErrMsgRequir = By.xpath(myXpath);
+		WebElement errMsgEmail = driver.findElement(EmailErrMsgRequir);
+		return errMsgEmail.getText();
+	}
+	
+	public String getErrorMessagePass(String myXpath) {
+		By byPasErrMsgRequir = By.xpath(myXpath);
+		WebElement errMsgPassword = driver.findElement(byPasErrMsgRequir);
+		return errMsgPassword.getText();
+	}
+	
+	public String getErrorMessageCfPass(String myXpath) {
+		By byCfPasErrMsgRequir = By.xpath(myXpath);
+		WebElement errMsgCfPass = driver.findElement(byCfPasErrMsgRequir);
+		return errMsgCfPass.getText();
+	}
+	
+	public String getErrorMessagePhone(String myXpath){
+		By byPhoneErrMsgRequir = By.xpath(myXpath);
+		WebElement errMsgPhone = driver.findElement(byPhoneErrMsgRequir);
+		return errMsgPhone.getText();
+	} 
+	
+	public String getErrorMessageAddress(String myXpath) {
+		By byAddressErrMsgRequir = By.xpath(myXpath);
+		WebElement errMsgAddress = driver.findElement(byAddressErrMsgRequir);
+		return errMsgAddress.getText();
+	}
+	
 
 }

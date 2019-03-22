@@ -28,43 +28,30 @@ public class RegisterFailBlank extends PageObject {
 
 		// click button register
 		ClickBtnRegister();
-
 		// Get error message
-		By byNameErrMsgRequir = By.xpath("//div/div/div/div");
-		WebElement errMsgName = driver.findElement(byNameErrMsgRequir);
-		String NamecontentMsg = errMsgName.getText();
+		String errormessageName = getErrorMessageName("//div/div/div/div");
 		// Verify
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_NAME, NamecontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_NAME, errormessageName);
 		// Get error message
-		By EmailErrMsgRequir = By.xpath("//div/div[2]");
-		WebElement errMsgEmail = driver.findElement(EmailErrMsgRequir);
-		String EmailcontentMsg = errMsgEmail.getText();
+		String erromessageEmail = getErrorMessageEmail("//div/div[2]");
 		// Verify
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_EMAIL, EmailcontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_EMAIL, erromessageEmail);
 		// Get error message
-		By byPasErrMsgRequir = By.xpath("//div/div[3]");
-		WebElement errMsgPassword = driver.findElement(byPasErrMsgRequir);
-		String PascontentMsg = errMsgPassword.getText();
+		String errormessagePassword = getErrorMessagePass("//div/div[3]");
 		// Verify
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASSWORD, PascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASSWORD, errormessagePassword);
 		// Get error message
-		By byCfPasErrMsgRequir = By.xpath("//div[4]");
-		WebElement errMsgCfPass = driver.findElement(byCfPasErrMsgRequir);
-		String CfPascontentMsg = errMsgCfPass.getText();
+		String errormessageCfPassword = getErrorMessageCfPass("//div[4]");
 		// Verify
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_CONFIRMPASS, CfPascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_CONFIRMPASS, errormessageCfPassword);
 		// Get error message
-		By byPhoneErrMsgRequir = By.xpath("//div[5]");
-		WebElement errMsgPhone = driver.findElement(byPhoneErrMsgRequir);
-		String PhonecontentMsg = errMsgPhone.getText();
+		String errormessagePhone = getErrorMessagePhone("//div[5]");
 		// Verify
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_PHONE, PhonecontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PHONE, errormessagePhone);
 		// Get error message
-		By byAddressErrMsgRequir = By.xpath("//div[6]");
-		WebElement errMsgAddress = driver.findElement(byAddressErrMsgRequir);
-		String AddresscontentMsg = errMsgAddress.getText();
+		String errormessageAddress = getErrorMessageAddress("//div[6]");
 		// Verify
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_ADDRESS, AddresscontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_ADDRESS, errormessageAddress);
 
 	}
 
@@ -88,14 +75,11 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-
-		By byNameErrMsgRequir = By.xpath("//div/div/div/div");
-		WebElement NameErrMsg = driver.findElement(byNameErrMsgRequir);
-		String NamecontentMsg = NameErrMsg.getText();
+		String errormessageName = getErrorMessageName("//div/div/div/div");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_NAME, NamecontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_NAME, errormessageName);
 
 	}
 
@@ -118,14 +102,11 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-
-		By byEmailErrMsgRequir = By.xpath("//div/div/div/div");
-		WebElement EmailErrMsg = driver.findElement(byEmailErrMsgRequir);
-		String EmailcontentMsg = EmailErrMsg.getText();
+		String errormessageEmail = getErrorMessageEmail("//div/div/div/div");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_EMAIL, EmailcontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_EMAIL, errormessageEmail);
 	}
 
 	@Test
@@ -146,24 +127,18 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-
-		By byPasErrMsgRequir = By.xpath("//div/div/div/div");
-		WebElement PasErrMsg = driver.findElement(byPasErrMsgRequir);
-		String PascontentMsg = PasErrMsg.getText();
+		String errormessagePassword = getErrorMessagePass("//div/div/div/div");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASSWORD, PascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASSWORD, errormessagePassword);
 
 		// Get error message
-
-		By byCfPasErrMsgRequir = By.xpath("//div[2]");
-		WebElement CfPasErrMsg = driver.findElement(byCfPasErrMsgRequir);
-		String CfPascontentMsg = CfPasErrMsg.getText();
+		String errormessageCfPassword = getErrorMessageCfPass("//div[2]");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASS_DIFFERENT_CFPASS, CfPascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASS_DIFFERENT_CFPASS, errormessageCfPassword);
 	}
 
 	@Test
@@ -185,14 +160,11 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-
-		By byCfPasErrMsgRequir = By.xpath("//div/div/div/div");
-		WebElement CfPasErrMsg = driver.findElement(byCfPasErrMsgRequir);
-		String CfPascontentMsg = CfPasErrMsg.getText();
+		String errormessageCfPassword = getErrorMessageCfPass("//div/div/div/div");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_CONFIRMPASS, CfPascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_CONFIRMPASS, errormessageCfPassword);
 
 	}
 
@@ -215,14 +187,11 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-
-		By byAddressErrMsgRequir = By.xpath("//div/div/div/div");
-		WebElement AddressErrMsg = driver.findElement(byAddressErrMsgRequir);
-		String AddresscontentMsg = AddressErrMsg.getText();
+		String errormessageAddress = getErrorMessageAddress("//div/div/div/div");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_ADDRESS, AddresscontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_ADDRESS, errormessageAddress);
 
 	}
 
@@ -249,13 +218,10 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-
-		By byPhoneErrMsgRequir = By.xpath("//div/div/div/div");
-		WebElement PhoneErrMsg = driver.findElement(byPhoneErrMsgRequir);
-		String PhonecontentMsg = PhoneErrMsg.getText();
+		String errormessagePhone = getErrorMessagePhone("//div/div/div/div");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_PHONE, PhonecontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PHONE, errormessagePhone);
 	}
 }

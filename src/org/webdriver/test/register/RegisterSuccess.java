@@ -44,6 +44,7 @@ public class RegisterSuccess extends PageObject {
 		// refresh browser=> back home
 		driver.get(homeURL);
 
+		
 	}
 
 }

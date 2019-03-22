@@ -11,6 +11,7 @@ public class LoginFail extends PageObject {
 	 * Cách 1-@Before public void navigate() { driver.navigate().to(loginURL); }
 	 */
 	// Cách 2
+	
 	@Before
 	public void click() {
 		By memberbtnBy = By.xpath("//a[contains(text(),'Member')]");

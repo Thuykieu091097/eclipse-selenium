@@ -44,13 +44,11 @@ public class RegisterFailDefault extends PageObject {
 		ClickBtnRegister();
 		// Get error message
 
-		By byNameErrMsgRequir = By.xpath("//div/div/div/div");
-		WebElement NameErrMsg = driver.findElement(byNameErrMsgRequir);
-		String NamecontentMsg = NameErrMsg.getText();
+		String errormessageNameCharacter = getErrorMessageName("//div/div/div/div");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_NAME_CHARACTER, NamecontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_NAME_CHARACTER, errormessageNameCharacter);
 
 	}
 
@@ -77,22 +75,18 @@ public class RegisterFailDefault extends PageObject {
 		ClickBtnRegister();
 		// Get error message
 
-		By byPasErrMsgRequir = By.xpath("//div/div/div/div");
-		WebElement PasErrMsg = driver.findElement(byPasErrMsgRequir);
-		String PascontentMsg = PasErrMsg.getText();
+		String errormessagePasswordCharacter = getErrorMessagePass("//div/div/div/div");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASS_CHARACTER, PascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASS_CHARACTER, errormessagePasswordCharacter);
 		// Get error message
 
-		By byCfPasErrMsgRequir = By.xpath("//div/div[2]");
-		WebElement CfPasErrMsg = driver.findElement(byCfPasErrMsgRequir);
-		String CfPascontentMsg = CfPasErrMsg.getText();
+		String errormessageCfPasswordCharacter = getErrorMessageCfPass("//div[2]");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_CFPASS_CHARACTER, CfPascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_CFPASS_CHARACTER, errormessageCfPasswordCharacter);
 
 	}
 
@@ -115,18 +109,14 @@ public class RegisterFailDefault extends PageObject {
 
 		// click button register
 
-		By SubmitBy = By.xpath("//input[@value='Register']");
-		WebElement SubmitBtn = driver.findElement(SubmitBy);
-		SubmitBtn.click();
+		ClickBtnRegister();
 		// Get error message
 
-		By byAddressErrMsgRequir = By.xpath("//div/div/div/div");
-		WebElement AddressErrMsg = driver.findElement(byAddressErrMsgRequir);
-		String AddresscontentMsg = AddressErrMsg.getText();
+		String errormessageAddressCharacter = getErrorMessageAddress("//div/div/div/div");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_ADDRESS_CHARACTER, AddresscontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_ADDRESS_CHARACTER, errormessageAddressCharacter);
 
 	}
 
@@ -151,14 +141,11 @@ public class RegisterFailDefault extends PageObject {
 
 		ClickBtnRegister();
 		// Get error message
-
-		By byPhoneErrMsgRequir = By.xpath("//div/div/div/div");
-		WebElement PhoneErrMsg = driver.findElement(byPhoneErrMsgRequir);
-		String PhonecontentMsg = PhoneErrMsg.getText();
+		String errormessagePhoneCharacter = getErrorMessagePhone("//div/div/div/div");
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_PHONE_CHARACTER, PhonecontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PHONE_CHARACTER, errormessagePhoneCharacter);
 
 	}
 
@@ -183,14 +170,12 @@ public class RegisterFailDefault extends PageObject {
 
 		ClickBtnRegister();
 		// Get error message
+		String errormessagePassdifferentCfPass = getErrorMessagePhone("//div/div/div/div");
 
-		By byCfPasErrMsgBy = By.xpath("//div/div/div/div");
-		WebElement CfPasErrMsg = driver.findElement(byCfPasErrMsgBy);
-		String CfPascontentMsg = CfPasErrMsg.getText();
 
 		// Verify
 
-		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASS_DIFFERENT_CFPASS, CfPascontentMsg);
+		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASS_DIFFERENT_CFPASS, errormessagePassdifferentCfPass);
 
 	}
 
