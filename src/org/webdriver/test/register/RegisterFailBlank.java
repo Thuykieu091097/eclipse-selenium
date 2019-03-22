@@ -29,27 +29,27 @@ public class RegisterFailBlank extends PageObject {
 		// click button register
 		ClickBtnRegister();
 		// Get error message
-		String errormessageName = getErrorMessageName("//div/div/div/div");
+		String errormessageName = getErroMessage("//div/div/div/div");
 		// Verify
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_NAME, errormessageName);
 		// Get error message
-		String erromessageEmail = getErrorMessageEmail("//div/div[2]");
+		String erromessageEmail = getErroMessage("//div/div[2]");
 		// Verify
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_EMAIL, erromessageEmail);
 		// Get error message
-		String errormessagePassword = getErrorMessagePass("//div/div[3]");
+		String errormessagePassword = getErroMessage("//div/div[3]");
 		// Verify
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASSWORD, errormessagePassword);
 		// Get error message
-		String errormessageCfPassword = getErrorMessageCfPass("//div[4]");
+		String errormessageCfPassword = getErroMessage("//div[4]");
 		// Verify
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_CONFIRMPASS, errormessageCfPassword);
 		// Get error message
-		String errormessagePhone = getErrorMessagePhone("//div[5]");
+		String errormessagePhone = getErroMessage("//div[5]");
 		// Verify
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_PHONE, errormessagePhone);
 		// Get error message
-		String errormessageAddress = getErrorMessageAddress("//div[6]");
+		String errormessageAddress = getErroMessage("//div[6]");
 		// Verify
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_ADDRESS, errormessageAddress);
 
@@ -75,7 +75,7 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-		String errormessageName = getErrorMessageName("//div/div/div/div");
+		String errormessageName = getErroMessage("//div/div/div/div");
 
 		// Verify
 
@@ -102,7 +102,7 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-		String errormessageEmail = getErrorMessageEmail("//div/div/div/div");
+		String errormessageEmail = getErroMessage("//div/div/div/div");
 
 		// Verify
 
@@ -127,14 +127,14 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-		String errormessagePassword = getErrorMessagePass("//div/div/div/div");
+		String errormessagePassword = getErroMessage("//div/div/div/div");
 
 		// Verify
 
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASSWORD, errormessagePassword);
 
 		// Get error message
-		String errormessageCfPassword = getErrorMessageCfPass("//div[2]");
+		String errormessageCfPassword = getErroMessage("//div[2]");
 
 		// Verify
 
@@ -160,7 +160,7 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-		String errormessageCfPassword = getErrorMessageCfPass("//div/div/div/div");
+		String errormessageCfPassword = getErroMessage("//div/div/div/div");
 
 		// Verify
 
@@ -187,7 +187,7 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-		String errormessageAddress = getErrorMessageAddress("//div/div/div/div");
+		String errormessageAddress = getErroMessage("//div/div/div/div");
 
 		// Verify
 
@@ -218,7 +218,7 @@ public class RegisterFailBlank extends PageObject {
 		ClickBtnRegister();
 
 		// Get error message
-		String errormessagePhone = getErrorMessagePhone("//div/div/div/div");
+		String errormessagePhone = getErroMessage("//div/div/div/div");
 
 		// Verify
 

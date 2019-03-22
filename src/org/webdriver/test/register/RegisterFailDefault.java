@@ -44,7 +44,7 @@ public class RegisterFailDefault extends PageObject {
 		ClickBtnRegister();
 		// Get error message
 
-		String errormessageNameCharacter = getErrorMessageName("//div/div/div/div");
+		String errormessageNameCharacter = getErroMessage("//div/div/div/div");
 
 		// Verify
 
@@ -75,14 +75,14 @@ public class RegisterFailDefault extends PageObject {
 		ClickBtnRegister();
 		// Get error message
 
-		String errormessagePasswordCharacter = getErrorMessagePass("//div/div/div/div");
+		String errormessagePasswordCharacter = getErroMessage("//div/div/div/div");
 
 		// Verify
 
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASS_CHARACTER, errormessagePasswordCharacter);
 		// Get error message
 
-		String errormessageCfPasswordCharacter = getErrorMessageCfPass("//div[2]");
+		String errormessageCfPasswordCharacter = getErroMessage("//div[2]");
 
 		// Verify
 
@@ -112,7 +112,7 @@ public class RegisterFailDefault extends PageObject {
 		ClickBtnRegister();
 		// Get error message
 
-		String errormessageAddressCharacter = getErrorMessageAddress("//div/div/div/div");
+		String errormessageAddressCharacter = getErroMessage("//div/div/div/div");
 
 		// Verify
 
@@ -141,7 +141,7 @@ public class RegisterFailDefault extends PageObject {
 
 		ClickBtnRegister();
 		// Get error message
-		String errormessagePhoneCharacter = getErrorMessagePhone("//div/div/div/div");
+		String errormessagePhoneCharacter = getErroMessage("//div/div/div/div");
 
 		// Verify
 
@@ -170,7 +170,7 @@ public class RegisterFailDefault extends PageObject {
 
 		ClickBtnRegister();
 		// Get error message
-		String errormessagePassdifferentCfPass = getErrorMessagePhone("//div/div/div/div");
+		String errormessagePassdifferentCfPass = getErroMessage("//div/div/div/div");
 
 
 		// Verify
