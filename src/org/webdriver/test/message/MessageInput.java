@@ -1,6 +1,6 @@
 package org.webdriver.test.message;
 
-public class MessageInput {
+public class MessageInput { 
 	public static String NAME = "THUY KIEU";
 	public static String EMAIL = "thuykieu@gmail.com";
 	public static String PASSWORD = "thuykieu0910";

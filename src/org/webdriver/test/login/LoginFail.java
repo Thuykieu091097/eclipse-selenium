@@ -14,12 +14,8 @@ public class LoginFail extends PageObject {
 	
 	@Before
 	public void click() {
-		By memberbtnBy = By.xpath("//a[contains(text(),'Member')]");
-		WebElement memberBtn = driver.findElement(memberbtnBy);
-		memberBtn.click();
-		By loginbtnBy = By.xpath("//a[contains(text(),'Login')]");
-		WebElement loginBtn = driver.findElement(loginbtnBy);
-		loginBtn.click();
+		clickOnElementByXpath("//a[contains(text(),'Member')]");
+		clickOnElementByXpath("//a[contains(text(),'Login')]");
 	}
 
 	@Test

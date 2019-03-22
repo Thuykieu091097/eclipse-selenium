@@ -131,6 +131,11 @@ public class PageObject {
 		WebElement phoneField = driver.findElement(PhoneBy);
 		phoneField.sendKeys(MessageInput.INPUT_FAIL);
 	}
+	
+	public void clickOnElementByXpath(String myXpath){
+
+	       driver.findElement(By.xpath(myXpath)).click();
+	}
 
 	protected void ClickBtnRegister() {
 		// click button register
