@@ -12,3 +12,4 @@ public class MessageInput {
 	public static String PASSLOGIN = "thuykieu0910";
 	public static String INPUT_FAIL = "01";
 }
+

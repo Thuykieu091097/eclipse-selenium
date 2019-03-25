@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.webdriver.test.message.MessageError;
+import org.webdriver.test.message.MessageXpath;
 import org.webdriver.test.pageobject.PageObject;
 
 public class RegisterFailBlank extends PageObject {
@@ -13,15 +14,17 @@ public class RegisterFailBlank extends PageObject {
 	// Cách 2
 	@Before
 	public void click() {
-		clickOnElementByXpath("//a[contains(text(),'Member')]");
-		clickOnElementByXpath("//a[contains(text(),'Register')]");
+		clickOnElementByXpath(MessageXpath.MEMBER_BUTTON_HOME_XPATH);
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_HOME_XPATH);
+		
+		
 	}
 
 	@Test
 	public void testRegisterwithBlankField() {
 
 		// click button register
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 		// Get error message
 		String errormessageName = getErroMessage("//div/div/div/div");
 		// Verify
@@ -66,7 +69,7 @@ public class RegisterFailBlank extends PageObject {
 
 		// click button register
 
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 
 		// Get error message
 		String errormessageName = getErroMessage("//div/div/div/div");
@@ -93,7 +96,7 @@ public class RegisterFailBlank extends PageObject {
 
 		// click button register
 
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 
 		// Get error message
 		String errormessageEmail = getErroMessage("//div/div/div/div");
@@ -118,7 +121,7 @@ public class RegisterFailBlank extends PageObject {
 		EnterPhoneValue();
 
 		// click button register
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 
 		// Get error message
 		String errormessagePassword = getErroMessage("//div/div/div/div");
@@ -151,7 +154,7 @@ public class RegisterFailBlank extends PageObject {
 
 		// click button register
 
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 
 		// Get error message
 		String errormessageCfPassword = getErroMessage("//div/div/div/div");
@@ -178,7 +181,7 @@ public class RegisterFailBlank extends PageObject {
 
 		// click button register
 
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 
 		// Get error message
 		String errormessageAddress = getErroMessage("//div/div/div/div");
@@ -209,7 +212,7 @@ public class RegisterFailBlank extends PageObject {
 
 		// click button register
 
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 
 		// Get error message
 		String errormessagePhone = getErroMessage("//div/div/div/div");

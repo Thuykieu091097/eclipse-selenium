@@ -2,8 +2,7 @@ package org.webdriver.test.register;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.webdriver.test.message.MessageXpath;
 import org.webdriver.test.pageobject.PageObject;
 
 public class RegisterSuccess extends PageObject {
@@ -13,12 +12,8 @@ public class RegisterSuccess extends PageObject {
 	// Cách 2 
 	@Before
 	public void click() {
-		By memberbtnBy = By.xpath("//a[contains(text(),'Member')]");
-		WebElement memberBtn = driver.findElement(memberbtnBy);
-		memberBtn.click();
-		By registerbtnBy = By.xpath("//a[contains(text(),'Register')]");
-		WebElement registerBtn = driver.findElement(registerbtnBy);
-		registerBtn.click();
+		clickOnElementByXpath(MessageXpath.MEMBER_BUTTON_HOME_XPATH);
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_HOME_XPATH);
 	}
 
 	@Test
@@ -37,9 +32,7 @@ public class RegisterSuccess extends PageObject {
 
 		// click button register
 
-		By SubmitBy = By.xpath("//input[@value='Register']");
-		WebElement SubmitBtn = driver.findElement(SubmitBy);
-		SubmitBtn.click();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 
 		// refresh browser=> back home
 		driver.get(homeURL);

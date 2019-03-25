@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.webdriver.test.message.MessageError;
+import org.webdriver.test.message.MessageXpath;
 import org.webdriver.test.pageobject.PageObject;
 
 public class RegisterFailDefault extends PageObject {
@@ -13,8 +14,8 @@ public class RegisterFailDefault extends PageObject {
 	// Cách 2
 	@Before
 	public void click() {
-		clickOnElementByXpath("//a[contains(text(),'Member')]");
-		clickOnElementByXpath("//a[contains(text(),'Register')]");
+		clickOnElementByXpath(MessageXpath.MEMBER_BUTTON_HOME_XPATH);
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_HOME_XPATH);
 	}
 	
 
@@ -36,7 +37,7 @@ public class RegisterFailDefault extends PageObject {
 
 		// click button register
 
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 		// Get error message
 
 		String errormessageNameCharacter = getErroMessage("//div/div/div/div");
@@ -67,7 +68,7 @@ public class RegisterFailDefault extends PageObject {
 
 		// click button register
 
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 		// Get error message
 
 		String errormessagePasswordCharacter = getErroMessage("//div/div/div/div");
@@ -104,7 +105,7 @@ public class RegisterFailDefault extends PageObject {
 
 		// click button register
 
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 		// Get error message
 
 		String errormessageAddressCharacter = getErroMessage("//div/div/div/div");
@@ -134,7 +135,7 @@ public class RegisterFailDefault extends PageObject {
 
 		// click button register
 
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 		// Get error message
 		String errormessagePhoneCharacter = getErroMessage("//div/div/div/div");
 
@@ -163,7 +164,7 @@ public class RegisterFailDefault extends PageObject {
 
 		// click button register
 
-		ClickBtnRegister();
+		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 		// Get error message
 		String errormessagePassdifferentCfPass = getErroMessage("//div/div/div/div");
 

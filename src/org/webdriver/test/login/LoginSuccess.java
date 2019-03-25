@@ -2,6 +2,7 @@ package org.webdriver.test.login;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.webdriver.test.message.MessageXpath;
 import org.webdriver.test.pageobject.PageObject;
 
 public class LoginSuccess extends PageObject {
@@ -11,8 +12,8 @@ public class LoginSuccess extends PageObject {
 	// Cách 2
 	@Before
 	public void click() {
-		clickOnElementByXpath("//a[contains(text(),'Member')]");
-		clickOnElementByXpath("//a[contains(text(),'Login')]");
+		clickOnElementByXpath(MessageXpath.MEMBER_BUTTON_HOME_XPATH);
+		clickOnElementByXpath(MessageXpath.LOGIN_BUTTON_HOME_XPATH);
 	}
 
 	@Test
@@ -23,7 +24,7 @@ public class LoginSuccess extends PageObject {
 		// input Password
 		EnterPasswordValueLogin();
 		// click button login
-		ClickBtnLogin();
+		clickOnElementByXpath(MessageXpath.LOGIN_BUTTON_XPATH);
 		// Back home
 		driver.get(homeURL);
 
