@@ -2,8 +2,7 @@ package org.webdriver.test.login;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.webdriver.test.message.MessageInput;
 import org.webdriver.test.message.MessageXpath;
 import org.webdriver.test.pageobject.PageObject;
 
@@ -30,7 +29,7 @@ public class LoginFail extends PageObject {
 	@Test
 	public void testLoginwithBlankEmail() {
 		// input Password
-		EnterPasswordValueLogin();
+		sendKeys(MessageXpath.PASSWORD_FIELD_LOGIN, MessageInput.PASSLOGIN);
 		// click button login
 		clickOnElementByXpath(MessageXpath.LOGIN_BUTTON_XPATH);
 
@@ -40,7 +39,7 @@ public class LoginFail extends PageObject {
 	public void testLoginwithBlankPass() {
 
 		// input email
-		EnterEmailValueLogin();
+		sendKeys(MessageXpath.EMAIL_FIELD_LOGIN, MessageInput.EMAILLOGIN);
 		// click button login
 		clickOnElementByXpath(MessageXpath.LOGIN_BUTTON_XPATH);
 	}
@@ -48,9 +47,7 @@ public class LoginFail extends PageObject {
 	@Test
 	public void BackHome() {
 		// click button back
-		By BackBy = By.xpath(MessageXpath.BACK_HOME_LOGIN);
-		WebElement backBtn = driver.findElement(BackBy);
-		backBtn.click();
+		clickOnElementByXpath(MessageXpath.BACK_HOME_LOGIN);
 		// Back home
 		driver.get(homeURL);
 	}
@@ -58,9 +55,7 @@ public class LoginFail extends PageObject {
 	@Test
 	public void BackRegister() {
 		// click button back
-		By BackRegisterBy = By.xpath(MessageXpath.BACK_REGISTER_LOGIN);
-		WebElement backregisterBtn = driver.findElement(BackRegisterBy);
-		backregisterBtn.click();
+		clickOnElementByXpath(MessageXpath.BACK_REGISTER_LOGIN);
 		// Back register
 		driver.get(registerURL);
 	}
@@ -68,9 +63,7 @@ public class LoginFail extends PageObject {
 	@Test
 	public void LoginbyGoogle() {
 		// click link login by google
-		By LoginGoogleBy = By.xpath(MessageXpath.BACK_GOOGLE_LOGIN);
-		WebElement loginGoogleLink = driver.findElement(LoginGoogleBy);
-		loginGoogleLink.click();
+		clickOnElementByXpath(MessageXpath.BACK_GOOGLE_LOGIN);
 		// Access account google browser
 		driver.get(loginbyGG);
 	}
@@ -79,9 +72,7 @@ public class LoginFail extends PageObject {
 	public void ForgotPass() {
 
 		// click link fogot
-		By ForgotPassBy = By.xpath(MessageXpath.BACK_FORGOT_PASSWORD_LOGIN);
-		WebElement forgotPassLink = driver.findElement(ForgotPassBy);
-		forgotPassLink.click();
+		clickOnElementByXpath(MessageXpath.BACK_FORGOT_PASSWORD_LOGIN);
 		// access...
 		driver.get(resetURL);
 

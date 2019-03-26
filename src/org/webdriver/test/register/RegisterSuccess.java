@@ -2,6 +2,7 @@ package org.webdriver.test.register;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.webdriver.test.message.MessageInput;
 import org.webdriver.test.message.MessageXpath;
 import org.webdriver.test.pageobject.PageObject;
 
@@ -9,7 +10,7 @@ public class RegisterSuccess extends PageObject {
 	/*
 	 * Cách 1-@Before public void navigate() { driver.navigate().to(registerURL); }
 	 */
-	// Cách 2 
+	// Cách 2
 	@Before
 	public void click() {
 		clickOnElementByXpath(MessageXpath.MEMBER_BUTTON_HOME_XPATH);
@@ -20,15 +21,17 @@ public class RegisterSuccess extends PageObject {
 	public void testRegisterwithInputFull() {
 
 		// input name
-		EnterNameValue();
+		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
 		// input email
-		EnterEmailValue();
+		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
 		// input password
-		EnterPasswordValue();
+		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
 		// input confirm password
-		EnterAddressValue();
+		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
 		// input address
-		EnterPhoneValue();
+		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
+		// input phone number
+		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
 
 		// click button register
 
@@ -37,7 +40,6 @@ public class RegisterSuccess extends PageObject {
 		// refresh browser=> back home
 		driver.get(homeURL);
 
-		
 	}
 
 }

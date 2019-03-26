@@ -2,6 +2,7 @@ package org.webdriver.test.login;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.webdriver.test.message.MessageInput;
 import org.webdriver.test.message.MessageXpath;
 import org.webdriver.test.pageobject.PageObject;
 
@@ -20,9 +21,9 @@ public class LoginSuccess extends PageObject {
 	public void testLoginwithInputFull() {
 
 		// input email
-		EnterEmailValueLogin();
+		sendKeys(MessageXpath.EMAIL_FIELD_LOGIN, MessageInput.EMAILLOGIN);
 		// input Password
-		EnterPasswordValueLogin();
+		sendKeys(MessageXpath.PASSWORD_FIELD_LOGIN, MessageInput.PASSLOGIN);
 		// click button login
 		clickOnElementByXpath(MessageXpath.LOGIN_BUTTON_XPATH);
 		// Back home

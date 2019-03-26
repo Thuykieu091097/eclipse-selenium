@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.webdriver.test.message.MessageError;
+import org.webdriver.test.message.MessageInput;
 import org.webdriver.test.message.MessageXpath;
 import org.webdriver.test.pageobject.PageObject;
 
@@ -56,16 +57,15 @@ public class RegisterFailBlank extends PageObject {
 	public void testRegisterwithBlankName() {
 
 		// input email
-		EnterEmailValue();
-
+		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
 		// input password
-		EnterPasswordValue();
+		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
 		// input confirm password
-		EnterCfPasswordValue();
+		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
 		// input address
-		EnterAddressValue();
+		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
 		// input phone number
-		EnterPhoneValue();
+		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
 
 		// click button register
 
@@ -84,15 +84,15 @@ public class RegisterFailBlank extends PageObject {
 	public void testRegisterwithBlankEmail() {
 
 		// input name
-		EnterNameValue();
+		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
 		// input password
-		EnterPasswordValue();
+		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
 		// input confirm password
-		EnterCfPasswordValue();
+		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
 		// input address
-		EnterAddressValue();
+		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
 		// input phone number
-		EnterPhoneValue();
+		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
 
 		// click button register
 
@@ -109,16 +109,16 @@ public class RegisterFailBlank extends PageObject {
 	@Test
 	public void testRegisterwithBlankPas() {
 		// input name
-		EnterNameValue();
+		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
 
 		// input email
-		EnterEmailValue();
+		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
 		// input confirm password
-		EnterCfPasswordValue();
+		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
 		// input address
-		EnterAddressValue();
+		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
 		// input phone number
-		EnterPhoneValue();
+		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
 
 		// click button register
 		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
@@ -142,15 +142,16 @@ public class RegisterFailBlank extends PageObject {
 	public void testRegisterwithBlankCfPas() {
 
 		// input name
-		EnterNameValue();
+		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
+
 		// input email
-		EnterEmailValue();
+		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);		
 		// input password
-		EnterPasswordValue();
+		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
 		// input address
-		EnterAddressValue();
+		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
 		// input phone number
-		EnterPhoneValue();
+		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
 
 		// click button register
 
@@ -167,17 +168,17 @@ public class RegisterFailBlank extends PageObject {
 
 	@Test
 	public void testRegisterwithBlankAddress() {
-
 		// input name
-		EnterNameValue();
+		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
+
 		// input email
-		EnterEmailValue();
+		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);		
 		// input password
-		EnterPasswordValue();
+		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
 		// input confirm password
-		EnterCfPasswordValue();
+		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
 		// input phone number
-		EnterPhoneValue();
+		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
 
 		// click button register
 
@@ -196,19 +197,16 @@ public class RegisterFailBlank extends PageObject {
 	public void testRegisterwithBlankPhone() {
 
 		// input name
-		EnterNameValue();
+		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
 
 		// input email
-		EnterEmailValue();
-
+		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);		
 		// input password
-		EnterPasswordValue();
-
+		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
 		// input confirm password
-		EnterCfPasswordValue();
-
+		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
 		// input address
-		EnterAddressValue();
+		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
 
 		// click button register
 
