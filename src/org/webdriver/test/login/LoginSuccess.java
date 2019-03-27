@@ -21,15 +21,16 @@ public class LoginSuccess extends PageObject {
 	public void testLoginwithInputFull() {
 
 		// input email
-		sendKeys(MessageXpath.EMAIL_FIELD_LOGIN, MessageInput.EMAILLOGIN);
+		sendKeysByXpath(MessageXpath.EMAIL_FIELD_LOGIN, MessageInput.EMAILLOGIN);
 		// input Password
-		sendKeys(MessageXpath.PASSWORD_FIELD_LOGIN, MessageInput.PASSLOGIN);
+		sendKeysByXpath(MessageXpath.PASSWORD_FIELD_LOGIN, MessageInput.PASSLOGIN);
+		
 		// click button login
 		clickOnElementByXpath(MessageXpath.LOGIN_BUTTON_XPATH);
+		
 		// Back home
 		driver.get(homeURL);
 
-		
 	}
 
 }

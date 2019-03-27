@@ -29,7 +29,8 @@ public class LoginFail extends PageObject {
 	@Test
 	public void testLoginwithBlankEmail() {
 		// input Password
-		sendKeys(MessageXpath.PASSWORD_FIELD_LOGIN, MessageInput.PASSLOGIN);
+		sendKeysByXpath(MessageXpath.PASSWORD_FIELD_LOGIN, MessageInput.PASSLOGIN);
+		
 		// click button login
 		clickOnElementByXpath(MessageXpath.LOGIN_BUTTON_XPATH);
 
@@ -39,7 +40,8 @@ public class LoginFail extends PageObject {
 	public void testLoginwithBlankPass() {
 
 		// input email
-		sendKeys(MessageXpath.EMAIL_FIELD_LOGIN, MessageInput.EMAILLOGIN);
+		sendKeysByXpath(MessageXpath.EMAIL_FIELD_LOGIN, MessageInput.EMAILLOGIN);
+		
 		// click button login
 		clickOnElementByXpath(MessageXpath.LOGIN_BUTTON_XPATH);
 	}
@@ -48,6 +50,7 @@ public class LoginFail extends PageObject {
 	public void BackHome() {
 		// click button back
 		clickOnElementByXpath(MessageXpath.BACK_HOME_LOGIN);
+		
 		// Back home
 		driver.get(homeURL);
 	}
@@ -56,6 +59,7 @@ public class LoginFail extends PageObject {
 	public void BackRegister() {
 		// click button back
 		clickOnElementByXpath(MessageXpath.BACK_REGISTER_LOGIN);
+		
 		// Back register
 		driver.get(registerURL);
 	}
@@ -64,6 +68,7 @@ public class LoginFail extends PageObject {
 	public void LoginbyGoogle() {
 		// click link login by google
 		clickOnElementByXpath(MessageXpath.BACK_GOOGLE_LOGIN);
+		
 		// Access account google browser
 		driver.get(loginbyGG);
 	}
@@ -73,6 +78,7 @@ public class LoginFail extends PageObject {
 
 		// click link fogot
 		clickOnElementByXpath(MessageXpath.BACK_FORGOT_PASSWORD_LOGIN);
+		
 		// access...
 		driver.get(resetURL);
 

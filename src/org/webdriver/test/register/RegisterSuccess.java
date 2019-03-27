@@ -21,20 +21,19 @@ public class RegisterSuccess extends PageObject {
 	public void testRegisterwithInputFull() {
 
 		// input name
-		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
+		sendKeysByXpath(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
 		// input email
-		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
+		sendKeysByXpath(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
 		// input password
-		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
+		sendKeysByXpath(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
 		// input confirm password
-		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
+		sendKeysByXpath(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
 		// input address
-		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
+		sendKeysByXpath(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
 		// input phone number
-		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
+		sendKeysByXpath(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
 
 		// click button register
-
 		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
 
 		// refresh browser=> back home

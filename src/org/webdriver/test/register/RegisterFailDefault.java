@@ -23,63 +23,53 @@ public class RegisterFailDefault extends PageObject {
 	public void testRegisterwithInputFailName() {
 
 		// input name
-		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.INPUT_FAIL);
+		sendKeysByXpath(MessageXpath.NAME_FIELD_REGISTER, MessageInput.INPUT_FAIL);
 		// input email
-		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
+		sendKeysByXpath(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
 		// input password
-		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
+		sendKeysByXpath(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
 		// input confirm password
-		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
+		sendKeysByXpath(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
 		// input address
-		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
+		sendKeysByXpath(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
 		// input phone number
-		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
+		sendKeysByXpath(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
 
 		// click button register
-
 		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
+		
 		// Get error message
-
 		String errormessageNameCharacter = getErroMessage("//div/div/div/div");
-
 		// Verify
-
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_NAME_CHARACTER, errormessageNameCharacter);
-
 	}
 
 	@Test
 	public void testRegisterwithInputFailPas() {
 
 		// input name
-		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
+		sendKeysByXpath(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
 		// input email
-		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
+		sendKeysByXpath(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
 		// input password
-		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.INPUT_FAIL);
+		sendKeysByXpath(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.INPUT_FAIL);
 		// input confirm password
-		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.INPUT_FAIL);
+		sendKeysByXpath(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.INPUT_FAIL);
 		// input address
-		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
+		sendKeysByXpath(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
 		// input phone number
-		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
-
+		
+		sendKeysByXpath(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
 		// click button register
-
 		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
+		
 		// Get error message
-
 		String errormessagePasswordCharacter = getErroMessage("//div/div/div/div");
-
 		// Verify
-
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASS_CHARACTER, errormessagePasswordCharacter);
 		// Get error message
-
 		String errormessageCfPasswordCharacter = getErroMessage("//div[2]");
-
 		// Verify
-
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_CFPASS_CHARACTER, errormessageCfPasswordCharacter);
 
 	}
@@ -88,27 +78,24 @@ public class RegisterFailDefault extends PageObject {
 	public void testRegisterwithInputFailAddress() {
 
 		// input name
-		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
+		sendKeysByXpath(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
 		// input email
-		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
+		sendKeysByXpath(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
 		// input password
-		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
+		sendKeysByXpath(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
 		// input confirm password
-		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
+		sendKeysByXpath(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
 		// input address
-		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.INPUT_FAIL);
+		sendKeysByXpath(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.INPUT_FAIL);
 		// input phone number
-		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
+		sendKeysByXpath(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.PHONE);
 
 		// click button register
-
 		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
+	
 		// Get error message
-
 		String errormessageAddressCharacter = getErroMessage("//div/div/div/div");
-
 		// Verify
-
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_ADDRESS_CHARACTER, errormessageAddressCharacter);
 
 	}
@@ -117,26 +104,24 @@ public class RegisterFailDefault extends PageObject {
 	public void testRegisterwithInputFailPhone() {
 
 		// input name
-		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
+		sendKeysByXpath(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
 		// input email
-		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
+		sendKeysByXpath(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
 		// input password
-		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
+		sendKeysByXpath(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
 		// input confirm password
-		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
+		sendKeysByXpath(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASS);
 		// input address
-		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
+		sendKeysByXpath(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.ADDRESS);
 		// input phone number
-		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.INPUT_FAIL);
+		sendKeysByXpath(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.INPUT_FAIL);
 
 		// click button register
-
 		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
+		
 		// Get error message
 		String errormessagePhoneCharacter = getErroMessage("//div/div/div/div");
-
 		// Verify
-
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_PHONE_CHARACTER, errormessagePhoneCharacter);
 
 	}
@@ -145,26 +130,24 @@ public class RegisterFailDefault extends PageObject {
 	public void testRegisterwithInputFailPasDifferentCfPas() {
 
 		// input name
-		sendKeys(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
+		sendKeysByXpath(MessageXpath.NAME_FIELD_REGISTER, MessageInput.NAME);
 		// input email
-		sendKeys(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
+		sendKeysByXpath(MessageXpath.EMAIL_FIELD_REGISTER, MessageInput.EMAIL);
 		// input password
-		sendKeys(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
+		sendKeysByXpath(MessageXpath.PASSWORD_FIELD_REGISTER, MessageInput.PASSWORD);
 		// input confirm password
-		sendKeys(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASSDIFFERENTPASS);
+		sendKeysByXpath(MessageXpath.CONFIRM_PASSWORD_FIELD_REGISTER, MessageInput.CONFIRMPASSDIFFERENTPASS);
 		// input address
-		sendKeys(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.INPUT_FAIL);
+		sendKeysByXpath(MessageXpath.ADDRESS_FIELD_REGISTER, MessageInput.INPUT_FAIL);
 		// input phone number
-		sendKeys(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.INPUT_FAIL);
+		sendKeysByXpath(MessageXpath.PHONE_FIELD_REGISTER, MessageInput.INPUT_FAIL);
 
 		// click button register
-
 		clickOnElementByXpath(MessageXpath.REGISTER_BUTTON_XPATH);
+		
 		// Get error message
 		String errormessagePassdifferentCfPass = getErroMessage("//div/div/div/div");
-
 		// Verify
-
 		Assert.assertEquals(MessageError.ERROR_MESSAGE_PASS_DIFFERENT_CFPASS, errormessagePassdifferentCfPass);
 
 	}
